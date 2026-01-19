@@ -1,0 +1,17 @@
+name: DevOps Deployment Demo
+on:
+  push:
+    branches: [ "main", "SCRUM-6-jira-automation" ]
+
+jobs:
+  deploy-job:
+    runs-on: ubuntu-latest
+    environment: production  # <--- Ye Jira ko signal bhejne ke liye zaroori hai
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deployment Simulation
+        run: |
+          echo "Hello World! Deploying SCRUM-6 code..."
+          ls -R
